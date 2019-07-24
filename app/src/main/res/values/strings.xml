@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Gestion Auto-Ecole</string>
+
+    <string name="emailheader">Email</string>
+    <string name="email">Email</string>
+    <string name="login">LOGIN</string>
+    <string name="remeber_me">REMEBER ME</string>
+    <string name="password">Password</string>
+    <string name="username">Username</string>
+    <string name="title_activity_candidat">Candidat</string>
+
+    <string name="twitterUsername">\@joeytribbiani</string>
+
+</resources>

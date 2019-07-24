@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+
+                    android:id="@+id/btnAC"
+                    android:layout_width="match_parent"
+                    android:layout_height="25pt"
+                    android:layout_margin="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/green_button"
+                    android:text="Liste Examen Code"
+                    android:textColor="#ff06071c" />
+
+                <Button
+
+                    android:id="@+id/btnSuppr"
+                    android:layout_width="match_parent"
+                    android:layout_height="25pt"
+                    android:layout_margin="15dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_weight="1"
+
+                    android:background="@drawable/green_button"
+                    android:text="Liste Examen Coduite"
+                    android:textColor="#ff06071c" />
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
