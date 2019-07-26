@@ -21,7 +21,9 @@
             android:name=".Candidat"
             android:label="@string/title_activity_candidat"
             android:theme="@style/AppTheme" />
-        <activity android:name=".ProfileCandidat"></activity>
+        <activity android:name=".ProfileCandidat" />
+        <activity android:name=".ListeExamenCode" />
+        <activity android:name=".ListExamenCoduite"></activity>
     </application>
 
 </manifest>

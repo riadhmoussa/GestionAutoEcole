@@ -240,7 +240,7 @@
                     android:layout_weight="1"
 
                     android:background="@drawable/green_button"
-                    android:text="Supprimer"
+                    android:text="Annuler"
                     android:textColor="#ff06071c" />
             </LinearLayout>
 

@@ -31,7 +31,7 @@ public class popajoutercandidat extends DialogFragment implements View.OnClickLi
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         form= inflater.inflate(R.layout.ajoutercandidat,container,false);
-        Button btnSuppr=(Button)form.findViewById(R.id.btnSuppr);
+        Button btnSuppr=(Button)form.findViewById(R.id.btnAnnuler);
         Button btnAC=(Button)form.findViewById(R.id.btnAC);
         RadioGroup mRadioGroup=(RadioGroup)form.findViewById(R.id.mRadioGroup);
         btnAnnuler=(Button)form.findViewById(R.id.btnAnnuler);
@@ -98,10 +98,10 @@ public class popajoutercandidat extends DialogFragment implements View.OnClickLi
 
             }
         });
-        btnSuppr.setOnClickListener(new View.OnClickListener() {
+        btnAnnuler.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(form.getContext(),"hello world",Toast.LENGTH_LONG).show();
+                dismiss();
             }
         });
 

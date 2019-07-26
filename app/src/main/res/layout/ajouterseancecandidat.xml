@@ -93,7 +93,7 @@
 
                 <Button
 
-                    android:id="@+id/btnSuppr"
+                    android:id="@+id/btnAnnuler"
                     android:layout_width="match_parent"
                     android:layout_height="25pt"
                     android:layout_margin="15dp"
@@ -101,7 +101,7 @@
                     android:layout_weight="1"
 
                     android:background="@drawable/green_button"
-                    android:text="Supprimer"
+                    android:text="Annuler"
                     android:textColor="#ff06071c" />
             </LinearLayout>
 

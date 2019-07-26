@@ -1,5 +1,7 @@
 package com.moussa889.gestionauto_ecole;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
@@ -9,11 +11,16 @@ import android.support.v4.app.FragmentManager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.ListView;
+import android.widget.SearchView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -25,6 +32,8 @@ public class Candidat extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_candidat);
+
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -40,6 +49,12 @@ public class Candidat extends AppCompatActivity {
 
 
         LoadData();
+
+
+
+
+
+
     }
         private class MyCustomAdapter extends BaseAdapter {
             public ArrayList<AdapterItems> listnewsDataAdpater ;
@@ -121,5 +136,43 @@ public class Candidat extends AppCompatActivity {
             ListView lsNews=(ListView)findViewById(R.id.LvCondidat);
             lsNews.setAdapter(myadapter);//intisal with data
         }
+
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.main_candidat_activity, menu);
+
+        SearchView sv=(SearchView) menu.findItem(R.id.searchbar).getActionView();
+        SearchManager sm=(SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        sv.setSearchableInfo(sm.getSearchableInfo(getComponentName()));
+        sv.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Toast.makeText(getApplicationContext(),query,Toast.LENGTH_LONG).show();
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        // Handle item selection
+        switch (item.getItemId()) {
+            case R.id.searchbar:
+                Toast.makeText(this,"Home",Toast.LENGTH_LONG).show();
+                return true;
+
+            default:
+                return super.onOptionsItemSelected(item);
+        }
+    }
 
 }

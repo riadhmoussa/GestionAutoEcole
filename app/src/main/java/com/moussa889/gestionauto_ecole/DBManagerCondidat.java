@@ -26,7 +26,7 @@ public class DBManagerCondidat {
     static final  int DBVersion=3;
 
 
-    static final String ColIDExamen="IDExamen";
+    static final String ColIDExamen="ID";
     static final String TableNameExamen="Examen";
     static final String ColIdCandidat="IDCandidat";
     static final String ColDateExamen="DateExamen";
@@ -34,8 +34,10 @@ public class DBManagerCondidat {
     static final String ColResultarExamen="ResultatExamen";
 
 
-    static final String CreateTableExamen="CREATE TABLE IF NOT EXISTS "+TableNameExamen+"(IDExamen INTEGER PRIMARY KEY AUTOINCREMENT,"
-            +ColIdCandidat +" INTEGER ,"+ColDateExamen+" TEXT ,"+ColTypeExamen+" TEXT,"+ColResultarExamen+" TEXT);";
+
+
+    static final String CreateTableExamen=" CREATE TABLE IF NOT EXISTS Examen (ID INTEGER PRIMARY KEY AUTOINCREMENT," +
+            "IDCandidat INTEGER,DateExamen TEXT,TypeExamen TEXT ,ResultatExamen TEXT , FOREIGN KEY(IDCandidat) REFERENCES Condidat(ID)); ";
 
 
 
@@ -126,4 +128,7 @@ public class DBManagerCondidat {
         int count=sqlDB.update(TableNameExamen,values,Selection,SelectionArgs);
         return count;
     }
+
+
+
 }

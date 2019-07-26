@@ -9,6 +9,7 @@ import android.support.v4.app.DialogFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
 import android.widget.TimePicker;
@@ -20,6 +21,7 @@ import java.util.Locale;
 public class popajouterseancecandidat  extends DialogFragment implements View.OnClickListener {
     View form;
     EditText edDateSeance,edHeureSeance;
+    Button btnAnnuler;
     final Calendar myCalendar= Calendar.getInstance();
     final Calendar myCalendarHuere= Calendar.getInstance();
 
@@ -34,6 +36,14 @@ public class popajouterseancecandidat  extends DialogFragment implements View.On
         form= inflater.inflate(R.layout.ajouterseancecandidat,container,false);
         edDateSeance=(EditText)form.findViewById(R.id.edDateSeance);
         edHeureSeance=(EditText)form.findViewById(R.id.edHeureSeance);
+        btnAnnuler=(Button)form.findViewById(R.id.btnAnnuler);
+
+        btnAnnuler.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                dismiss();
+            }
+        });
         date= new DatePickerDialog.OnDateSetListener() {
 
             @Override
